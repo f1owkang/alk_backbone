@@ -1,0 +1,61 @@
+<div class="container">
+    <div
+        class="fixed-grid has-1-cols-mobile has-4-cols-tablet has-4-cols-desktop has-8-cols-widescreen has-8-cols-fullhd pr-auto">
+        <h1 class="title is-4 ml-4" id="title1-1-1">Network Information</h1>
+        <div class="grid has-text-justified px-6">
+            <div class="cell has-text-weight-bold" id="WAN IP">WAN IP</div>
+            <div class="cell is-skeleton" id="WAN value">None</div>
+            <div class="cell has-text-weight-bold" id="LAN IP">LAN IP</div>
+            <div class="cell is-skeleton" id="LAN value">None</div>
+            <div class="cell has-text-weight-bold" id="VPN IP">VPN IP</div>
+            <div class="cell is-skeleton" id="VPN value">None</div>
+            <div class="cell has-text-weight-bold" id="SIM status1">SIM Status</div>
+            <div class="cell is-skeleton" id="SIM value1">None</div>
+            <div class="cell has-text-weight-bold" id="Network status">Network status</div>
+            <div class="cell is-skeleton" id="Network status value">None</div>
+            <div class="cell has-text-weight-bold" id="Service status">Service status</div>
+            <div class="cell is-skeleton" id="Service value">None</div>
+        </div>
+
+
+        <h1 class="title is-4 ml-4" id="title1-1-2">Network control</h1>
+        <div class="grid has-text-justified px-6">
+            <div class="cell has-text-weight-bold" id="Link control">Link control</div>
+            <div class="cell">
+                <button class="button is-success is-light" onclick="submitInternet('Connect');"
+                    id="Reconnect">Reconnect</button>
+            </div>
+            <div class="cell has-text-weight-bold" id="Link control1">Link control</div>
+            <div class="cell">
+                <button class="button is-danger is-light" onclick="submitInternet('Disconnect');"
+                    id="Disconnect">Disconnect</button>
+            </div>
+            <div class="cell has-text-weight-bold" id="Switch SIM">Switch SIM</div>
+            <div class="cell">
+                <div class="dropdown">
+                    <div class="dropdown-trigger">
+                        <button class="button" aria-haspopup="true" aria-controls="dropdown-menu1">
+                            <span>Click me</span>
+                            <span class="icon is-small">
+                                <i class="fas fa-angle-down" aria-hidden="true"></i>
+                            </span>
+                        </button>
+                    </div>
+                    <div class="dropdown-menu" id="dropdown-menu1" role="menu">
+                        <div class="dropdown-content">
+                            <a href="#" class="dropdown-item" id=" Built-in card "> Built-in card </a>
+                            <a href="#" class="dropdown-item" id=" External card "> External card </a>
+                            <hr class="dropdown-divider" />
+                            <a href="#" class="dropdown-item" id=" Priority built-in card "> Priority built-in card </a>
+                            <a href="#" class="dropdown-item" id=" Priority external card "> Priority external card </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<form method="post" name="internetForm" action="">
+    <input type="hidden" name="wan_action" value="">
+    <!--<input type="hidden" name="modem_prio" value="">-->
+</form>

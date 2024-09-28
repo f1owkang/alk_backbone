@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hello Bulma!</title>
+    <link rel="stylesheet" href="assets/css/bulma.min.css">
+    <link rel="stylesheet" href="assets/css/fontawesome.min.css">
+    <link rel="stylesheet" href="assets/css/solid.min.css">
+</head>
+
+<body>
+    <div id="header"></div>
+    <div class="container is-fluid">
+        <div class="hero-body">
+            <p class="title" id="status3">Real-time traffic</p>
+            <p class="subtitle" id="status3-1">Displays the real-time traffic of the device...</p>
+        </div>
+        <p class="mb-4"></p>
+
+        <div class="box py-5 px-6">
+            <nav class="level">
+                <div class="level-item has-text-centered">
+                    <div>
+                        <p class="heading" id="Instant download">Instant download</p>
+                        <p class="title has-skeleton is-4" id="Instant download value">None</p>
+                    </div>
+                </div>
+                <div class="level-item has-text-centered">
+                    <div>
+                        <p class="heading" id="Instant upload">Instant upload</p>
+                        <p class="title has-skeleton is-4" id="Instant upload value">None</p>
+
+                    </div>
+                </div>
+                <div class="level-item has-text-centered">
+                    <div>
+                        <p class="heading" id="Avg download">Avg download</p>
+                        <p class="title has-skeleton is-4" id="Avg download value">None</p>
+                    </div>
+                </div>
+                <div class="level-item has-text-centered">
+                    <div>
+                        <p class="heading" id="Avg upload">Avg upload</p>
+                        <p class="title has-skeleton is-4" id="Avg upload value">None</p>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+
+        <div class="box is-skeleton is-hidden-mobile" id="chart">
+            <div class="table-container">
+                <p></p>
+                <p></p>
+                <p></p>
+                <p></p>
+                <p></p>
+                <p></p>
+            </div>
+        </div></br>
+
+        <div class="hero-body">
+            <p class="title" id="status4">Historical traffic</p>
+            <p class="subtitle" id="status4-1">Displays the historical traffic of the device...</p>
+        </div>
+        <p class="mb-4"></p>
+
+        <div class="box py-5 px-6">
+            <div class="table-container">
+                <table class="table is-bordered is-fullwidth" id="Historical flow table">
+                    <thead>
+                        <tr>
+                            <th class="has-text-centered" id="Traffic date">Traffic date</th>
+                            <th class="has-text-centered" id="Downstream traffic">Downstream traffic</th>
+                            <th class="has-text-centered" id="Upstream traffic">Upstream traffic</th>
+                            <th class="has-text-centered" id="Total traffic">Total traffic</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+    </div>
+    <p class="mb-3"></p>
+
+    <div id="footer"></div>
+
+    <script src="assets/lang/i18n.js"></script>
+    <script src="assets/js/frappe-charts.min.umd.js"></script>
+    <script src="assets/js/jquery-3.7.1.min.js"></script>
+    <script src="assets/js/function-traffic.js"></script>
+    <script src="assets/js/click.js"></script>
+    <script src="assets/js/status.js"></script>
+
+    <script>
+        // 使用JavaScript动态加载footer.html
+        fetch('components/footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer').innerHTML = data;
+            });
+
+        // 使用JavaScript动态加载header.html
+        fetch('components/header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header').innerHTML = data;
+                initNavbar();
+                initDeleteBt();
+                // 重新加载语言文件
+                setLanguage(userLang);
+            });
+    </script>
+</body>
+
+</html>

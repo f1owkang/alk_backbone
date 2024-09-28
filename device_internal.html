@@ -1,0 +1,36 @@
+<style>
+    .table {
+        text-align: center;
+        /* 水平居中 */
+        vertical-align: middle;
+        /* 垂直居中 */
+    }
+</style>
+<div class="container">
+    <div
+        class="fixed-grid has-1-cols-mobile has-4-cols-tablet has-4-cols-desktop has-8-cols-widescreen has-8-cols-fullhd pr-auto">
+        <h1 class="title is-4 ml-4" id="title1-3-1">Network Information</h1>
+        <div class="grid has-text-justified px-6">
+            <div class="cell has-text-weight-bold" id="LAN IP">LAN IP</div>
+            <div class="cell is-skeleton" id="LAN value">None</div>
+            <div class="cell has-text-weight-bold" id="LAN netmask">LAN netmask</div>
+            <div class="cell is-skeleton" id="LAN netmask value">None</div>
+        </div>
+
+        <h1 class="title is-4 ml-4" id="title1-3-2">Device list</h1>
+        <div class="container is-fluid">
+            <div class="table-container">
+                <table class="table is-bordered is-fullwidth" id="Device list">
+                    <thead>
+                        <tr>
+                            <th class="has-text-centered" id="Host name">Host name</th>
+                            <th class="has-text-centered" id="IP address">IP address</th>
+                            <th class="has-text-centered" id="MAC address">MAC address</th>
+                            <th class="has-text-centered" id="SSID name">SSID name</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

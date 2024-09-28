@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hello Bulma!</title>
+  <link rel="stylesheet" href="assets/css/bulma.min.css">
+  <link rel="stylesheet" href="assets/css/fontawesome.min.css">
+  <link rel="stylesheet" href="assets/css/solid.min.css">
+</head>
+
+<body>
+  <div id="header"></div>
+
+  <div class="container is-fluid">
+    <div class="hero-body">
+      <p class="title" id="status1">Equipment overview</p>
+      <p class="subtitle" id="status1-1">Displays important information...</p>
+    </div>
+
+    <p class="mb-4"></p>
+
+    <div class="box py-5 px-6">
+      <nav class="level">
+        <div class="level-item has-text-centered">
+          <div>
+            <p class="heading" id="Network type">Network type</p>
+            <p class="title has-skeleton is-4" id="Network value">None</p>
+          </div>
+        </div>
+        <div class="level-item has-text-centered">
+          <div>
+            <p class="heading" id="Signal strength">Signal strength</p>
+            <p class="title has-skeleton is-4" id="Signal value">None</p>
+
+          </div>
+        </div>
+        <div class="level-item has-text-centered">
+          <div>
+            <p class="heading" id="Battery information">Battery information</p>
+            <p class="title has-skeleton is-4" id="Battery value">None</p>
+          </div>
+        </div>
+        <div class="level-item has-text-centered">
+          <div>
+            <p class="heading" id="Boot time">Boot time</p>
+            <p class="title has-skeleton is-4" id="Boot value">None</p>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </div></br>
+
+  <div class="container is-fluid">
+    <div class="box py-5 px-6">
+      <nav class="level">
+        <div class="level-item has-text-centered">
+          <div>
+            <p class="heading" id="Unread messages">Unread messages</p>
+            <p class="title has-skeleton is-4" id="Unread value">None</p>
+          </div>
+        </div>
+        <div class="level-item has-text-centered">
+          <div>
+            <p class="heading" id="Battery charge">Battery charge</p>
+            <p class="title has-skeleton is-4" id="Charge value">None</p>
+          </div>
+        </div>
+        <div class="level-item has-text-centered">
+          <div>
+            <p class="heading" id="SIM status">SIM status</p>
+            <p class="title has-skeleton is-4" id="SIM value">None</p>
+          </div>
+        </div>
+        <div class="level-item has-text-centered">
+          <div>
+            <p class="heading" id="Backend version">Backend version</p>
+            <p class="title has-skeleton is-4" id="Backend value">None</p>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </div></br>
+
+  <div class="container is-fluid">
+    <div class="box has-text-weight-bold py-6 px-6">
+      <div class="block">
+        <p class="heading" id="Signal progress">Signal progress :</p>
+        <progress class="progress" max="5" id="Signal progress value"></progress>
+      </div>
+      <div class="block">
+        <p class="heading" id="Battery progress">Battery progress :</p>
+        <progress class="progress" max="100" id="Battery progress value"></progress>
+      </div>
+      <div class="block">
+        <p class="heading" id="CPU busy progress">CPU busy progress :</p>
+        <progress class="progress" max="100" id="CPU busy value"></progress>
+      </div>
+      <div class="block">
+        <p class="heading" id="Running memory progress">Running memory progress :</p>
+        <progress class="progress" max="100" id="Running memory value"></progress>
+      </div>
+      <div class="block">
+        <p class="heading" id="Virtual memory progress">Virtual memory progress :</p>
+        <progress class="progress" max="100" id="Virtual memory value"></progress>
+      </div>
+    </div>
+  </div>
+
+  <p class="mt-6"></p>
+  <div class="container is-fluid">
+    <div class="hero-body">
+      <p class="title" id="status2">Device details</p>
+      <p class="subtitle" id="status2-1">Show device details...</p>
+    </div>
+
+    <p class="mb-4"></p>
+
+    <div class="box">
+      <div class="tabs is-toggle is-fullwidth">
+        <ul>
+          <li class="is-active" data-content-id="device_external">
+            <a>
+              <span class="icon is-small"><i class="fas fa-globe" aria-hidden="true"></i></span>
+              <span id="External networks">External network</span>
+            </a>
+          </li>
+          <li data-content-id="device_module">
+            <a>
+              <span class="icon is-small"><i class="fas fa-server" aria-hidden="true"></i></span>
+              <span id="Module information">Module information</span>
+            </a>
+          </li>
+          <li data-content-id="device_internal">
+            <a>
+              <span class="icon is-small"><i class="fas fa-sitemap" aria-hidden="true"></i></span>
+              <span id="Internal network">Internal network</span>
+            </a>
+
+          </li>
+        </ul>
+      </div>
+      <div id="tab_load" class="skeleton-block"></div>
+      <p class="mb-3"></p>
+    </div>
+  </div>
+
+  <p class="mb-4"></p>
+  <div id="footer"></div>
+
+  <script src="assets/lang/i18n.js"></script>
+  <script src="assets/js/jquery-3.7.1.min.js"></script>
+  <script src="assets/js/function-index.js"></script>
+  <script src="assets/js/click.js"></script>
+  <script src="assets/js/status.js"></script>
+  <script>
+    // 使用JavaScript动态加载footer.html
+    fetch('components/footer.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('footer').innerHTML = data;
+      });
+
+    // 使用JavaScript动态加载header.html
+    fetch('components/header.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('header').innerHTML = data;
+        initNavbar();
+        initDeleteBt();
+      });
+  </script>
+</body>
+
+</html>
