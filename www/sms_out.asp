@@ -1,0 +1,1 @@
+var smsmonitor_last = [<% get_sms(1); %>];
